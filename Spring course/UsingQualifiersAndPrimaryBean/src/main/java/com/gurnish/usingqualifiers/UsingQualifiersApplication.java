@@ -1,6 +1,7 @@
 package com.gurnish.usingqualifiers;
 
 import com.gurnish.usingqualifiers.Controllers.ConstructorInjectedController;
+import com.gurnish.usingqualifiers.Controllers.MyController;
 import com.gurnish.usingqualifiers.Controllers.PropertyInjectedControllers;
 import com.gurnish.usingqualifiers.Controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,10 @@ public class UsingQualifiersApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx= SpringApplication.run(UsingQualifiersApplication.class, args);
+        System.out.println("--------Primary bean");
+        MyController myController=(MyController) ctx.getBean("myController");
+        System.out.println(myController.sayHello());
+
         System.out.println("--------Property based");
         PropertyInjectedControllers propertyInjectedControllers=(PropertyInjectedControllers) ctx.getBean("propertyInjectedControllers");
         System.out.println(propertyInjectedControllers.getGreeting());
