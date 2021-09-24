@@ -10,7 +10,6 @@ public class JokeServiceImpl implements JokeService {
     public JokeServiceImpl() {
         this.chuckNorrisQuotes = new ChuckNorrisQuotes();
     }
-///hard-wiring not using controllers at this point
     @Override
     public String getJoke() {
         return chuckNorrisQuotes.getRandomQuote();
