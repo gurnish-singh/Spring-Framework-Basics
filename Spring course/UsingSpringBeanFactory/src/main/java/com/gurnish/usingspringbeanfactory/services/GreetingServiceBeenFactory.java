@@ -7,7 +7,7 @@ public class GreetingServiceBeenFactory {
         this.greetingRepo = greetingRepo;
     }
 
-    public GreetingService createGreetingService(String lang) {
+    public GreetingService chooseGreetingService(String lang) {
         switch (lang) {
             case "EN":
                 return new EnglishGreetingService(greetingRepo);
