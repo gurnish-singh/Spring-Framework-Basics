@@ -5,11 +5,12 @@ import com.gurnish.services.OwnerServices;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+
 @Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerServices {
     @Override
     public Set<Owner> findAll() {
-        return this.findAll();
+        return super.findAll();
     }
 
     @Override
@@ -18,7 +19,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner save( Owner object) {
+    public Owner save(Owner object) {
         return super.save(object.getId(), object);
     }
 

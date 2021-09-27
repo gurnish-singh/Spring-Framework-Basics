@@ -5,7 +5,23 @@
     <title>List of Owners</title>
 </head>
 <body>
-<h1 th:text="'List of Owners'">something</h1>
+<!--/*@thymesVar id="owner" type="com.gurnish.model.Owner"*/-->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="owner:${owners}"></tr> iterating through each owner
+    <tr th:text="${owner?.id}">1</tr>
+    <tr th:text="${owner?.firstName}">Gurnish</tr>
+    <tr th:text="${owner?.lastName}">Singh</tr>
+
+    </tbody>
+</table>
 
 </body>
 </html>

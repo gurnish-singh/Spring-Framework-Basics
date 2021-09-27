@@ -15,6 +15,8 @@ import java.time.LocalDate;
 
 @Component////it becomes a spring bean
 ///gets registered into the spring context
+////without it we will not be able to launch this class
+
 public class DataLoader implements CommandLineRunner {
     private final OwnerServices ownerServices;
     private final VetServices vetServices;
@@ -27,22 +29,20 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Owner owner1 = new Owner();
+        owner1.setId(1L);
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
 
-        Pet mikesPet = new Pet();
-        mikesPet.setOwner(owner1);
-        mikesPet.setBirthDate(LocalDate.now());
-
         ownerServices.save(owner1);
 
+
         Owner owner2 = new Owner();
+        owner2.setId(2L);
+
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        ownerServices.save(owner2);
 
-        Pet fionasCat = new Pet();
-        fionasCat.setOwner(owner2);
-        fionasCat.setBirthDate(LocalDate.now());
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
