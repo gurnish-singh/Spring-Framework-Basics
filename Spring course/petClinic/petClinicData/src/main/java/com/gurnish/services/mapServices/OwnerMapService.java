@@ -2,9 +2,10 @@ package com.gurnish.services.mapServices;
 
 import com.gurnish.model.Owner;
 import com.gurnish.services.OwnerServices;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerServices {
     @Override
     public Set<Owner> findAll() {

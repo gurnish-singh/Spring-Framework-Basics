@@ -2,9 +2,10 @@ package com.gurnish.services.mapServices;
 
 import com.gurnish.model.Vet;
 import com.gurnish.services.VetServices;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetServices {
     @Override
     public Set<Vet> findAll() {

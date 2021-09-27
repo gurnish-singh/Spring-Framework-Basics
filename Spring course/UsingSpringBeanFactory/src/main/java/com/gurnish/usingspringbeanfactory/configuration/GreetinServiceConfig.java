@@ -13,14 +13,15 @@ public class GreetinServiceConfig {
     GreetingServiceBeenFactory greetingServiceBeenFactory(GreetingRepo greetingRepo){
         return new GreetingServiceBeenFactory(greetingRepo);
     }
+
     @Bean
     @Profile({"EN","default"})
-    GreetingService englishGreetingService(GreetingServiceBeenFactory greetingServiceBeenFactory){
+    GreetingService english(GreetingServiceBeenFactory greetingServiceBeenFactory){
         return greetingServiceBeenFactory.chooseGreetingService("EN");
     }
     @Bean
     @Profile({"JPN"})
-    GreetingService japaneseGreetingService(GreetingServiceBeenFactory greetingServiceBeenFactory){
+    GreetingService japanese(GreetingServiceBeenFactory greetingServiceBeenFactory){
         return greetingServiceBeenFactory.chooseGreetingService("JPN");
     }
 
