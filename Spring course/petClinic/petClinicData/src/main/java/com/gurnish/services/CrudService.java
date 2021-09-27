@@ -1,4 +1,4 @@
-package petclinic.services;
+package com.gurnish.services;
 
 import java.util.Set;
 /////just made a common Service for other Services to use

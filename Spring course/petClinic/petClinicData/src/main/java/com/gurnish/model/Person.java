@@ -1,4 +1,4 @@
-package petclinic.model;
+package com.gurnish.model;
 
 public class Person extends BaseEntity{
     private String firstName;

@@ -1,33 +1,35 @@
-package petclinic.services.mapServices;
+package com.gurnish.services.mapServices;
 
-import petclinic.model.Vet;
-import petclinic.services.CrudService;
+import com.gurnish.model.Pet;
+import com.gurnish.services.PetService;
 
 import java.util.Set;
 
-public class VetMapService extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
-    public Set<Vet> findAll() {
+    public Set<Pet> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Vet findById(Long id) {
+    public Pet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Vet save(Vet object) {
+    public Pet save(Pet object) {
         return super.save(object.getId(), object);
     }
 
     @Override
-    public void delete(Vet object) {
+    public void delete(Pet object) {
         super.deleteByObject(object);
+
     }
 
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+
     }
 }

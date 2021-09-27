@@ -1,12 +1,12 @@
-package petclinic.Controllers;
+package com.gurnish.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class VetController {
-    @RequestMapping("/vets")
+public class OwnerController {
+    @RequestMapping("/owners")
     public String listVets(){
-        return "vets/index";
+        return "owners/index";
     }
 }

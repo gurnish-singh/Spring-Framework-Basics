@@ -1,4 +1,4 @@
-package petclinic.model;
+package com.gurnish.model;
 
 import java.time.LocalDate;
 

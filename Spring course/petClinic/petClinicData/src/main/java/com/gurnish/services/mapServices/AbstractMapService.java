@@ -1,4 +1,4 @@
-package petclinic.services.mapServices;
+package com.gurnish.services.mapServices;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,17 +11,21 @@ public abstract class AbstractMapService<T, ID> {
     Set<T> findAll() {
         return new HashSet<>(map.values());
     }
+
     T findById(ID id) {
         return map.get(id);
     }
-     T save(ID id,T object){
-         map.put(id,object);
-         return object;
-     }
-     void deleteById(ID id){
+
+    T save(ID id, T object) {
+        map.put(id, object);
+        return object;
+    }
+
+    void deleteById(ID id) {
         map.remove(id);
-     }
-     void deleteByObject(T object){
+    }
+
+    void deleteByObject(T object) {
         map.entrySet().removeIf(idtEntry -> idtEntry.getValue().equals(object));
-     }
+    }
 }

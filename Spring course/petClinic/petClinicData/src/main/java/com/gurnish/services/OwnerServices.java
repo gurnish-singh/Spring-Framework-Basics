@@ -1,8 +1,6 @@
-package petclinic.services;
+package com.gurnish.services;
 
-import petclinic.model.Owner;
-
-import java.util.Set;
+import com.gurnish.model.Owner;
 
 public interface OwnerServices extends  CrudService<Owner,Long> {
     Owner findByLastName(String Lastname);

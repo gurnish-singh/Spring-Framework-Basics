@@ -1,11 +1,11 @@
-package petclinic.services.mapServices;
+package com.gurnish.services.mapServices;
 
-import petclinic.model.Owner;
-import petclinic.services.CrudService;
+import com.gurnish.model.Owner;
+import com.gurnish.services.OwnerServices;
 
 import java.util.Set;
 
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerServices {
     @Override
     public Set<Owner> findAll() {
         return this.findAll();
@@ -30,5 +30,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     @Override
     public void deleteById(Long id) {
         super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String Lastname) {
+        return null;////isko baad mein dekhenge
+
     }
 }
