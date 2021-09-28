@@ -1,0 +1,5 @@
+gurnish:
+  jms:
+    user: jms
+    password: password
+    url: url

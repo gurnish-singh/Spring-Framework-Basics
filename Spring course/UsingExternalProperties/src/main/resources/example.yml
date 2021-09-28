@@ -1,0 +1,15 @@
+# this is a comment
+name: Gurnish
+names: #Comment
+  -john
+  -ringo
+  -bob
+pound_sign:"#"
+book:
+  author: Gurnish
+  publisher: random house
+truth: yes
+another_truth: True
+false: no # no,false,No,False
+String_val: "this is a string"
+
