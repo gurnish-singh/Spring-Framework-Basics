@@ -15,11 +15,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="owner:${owners}"></tr> iterating through each owner
-    <tr th:text="${owner?.id}">1</tr>
-    <tr th:text="${owner?.firstName}">Gurnish</tr>
-    <tr th:text="${owner?.lastName}">Singh</tr>
+<!--    iterating through each owner-->
 
+    <tr th:each="owner:${owners}">
+    <td th:text="${owner.id}">1</td>
+    <td th:text="${owner.firstName}">Gurnish</td>
+    <td th:text="${owner.lastName}">Singh</td>
+    </tr>
     </tbody>
 </table>
 
