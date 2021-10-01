@@ -1,0 +1,40 @@
+package com.gurnish.services.mapServices;
+
+import com.gurnish.model.Pet;
+import com.gurnish.model.PetType;
+import com.gurnish.services.PetService;
+import com.gurnish.services.PetTypeService;
+import org.springframework.stereotype.Service;
+
+import java.util.Set;
+@Service
+public class PetTypeMapService extends AbstractMapService<PetType,Long> implements PetTypeService{
+    @Override
+    public Set<PetType> findAll() {
+        return super.findAll();
+    }
+
+    @Override
+    public PetType findById(Long id) {
+        return super.findById(id);
+    }
+
+    @Override
+    public PetType save(PetType object) {
+        return super.save(object);
+    }
+
+    @Override
+    public void delete(PetType object) {
+        super.deleteByObject(object);
+
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        super.deleteById(id);
+
+    }
+
+
+}
