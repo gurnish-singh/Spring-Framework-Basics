@@ -1,16 +1,14 @@
 package com.gurnish.bootstrap;
 
 import com.gurnish.model.Owner;
-import com.gurnish.model.Pet;
+import com.gurnish.model.PetType;
 import com.gurnish.model.Vet;
 import com.gurnish.services.OwnerServices;
+import com.gurnish.services.PetService;
+import com.gurnish.services.PetTypeService;
 import com.gurnish.services.VetServices;
-import com.gurnish.services.mapServices.OwnerMapService;
-import com.gurnish.services.mapServices.VetMapService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 
 
 @Component////it becomes a spring bean
@@ -20,10 +18,14 @@ import java.time.LocalDate;
 public class DataLoader implements CommandLineRunner {
     private final OwnerServices ownerServices;
     private final VetServices vetServices;
+    private final PetService petService;
+    private final PetTypeService petTypeService;
 
-    public DataLoader(OwnerServices ownerServices, VetServices vetServices) {
+    public DataLoader(OwnerServices ownerServices, VetServices vetServices, PetService petService, PetTypeService petTypeService) {
         this.ownerServices = ownerServices;
         this.vetServices = vetServices;
+        this.petService = petService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
@@ -31,8 +33,18 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
-
         ownerServices.save(owner1);
+
+        PetType dog=new PetType();
+        dog.setName("billi");
+        PetType savedDogType= petTypeService.save(dog);
+
+        PetType cat=new PetType();
+        cat.setName("kutta");
+        PetType savedCatType= petTypeService.save(cat);
+
+
+
 
 
         Owner owner2 = new Owner();
