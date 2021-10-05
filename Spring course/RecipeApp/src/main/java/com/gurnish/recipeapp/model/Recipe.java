@@ -5,6 +5,7 @@ import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -22,8 +23,20 @@ public class Recipe {
     @Lob////Large object field
     private Byte[] image;
     //    private Difficulty difficulty;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "recipe")
+    private Set<Ingredients> ingredients;
+
+    public Set<Ingredients> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredients> ingredients) {
+        this.ingredients = ingredients;
+    }
 
     public Recipe() {
     }
