@@ -2,6 +2,7 @@ package com.gurnish.recipeapp.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 public class Ingredients {
@@ -13,6 +14,10 @@ public class Ingredients {
 
     @ManyToOne
     private Recipe recipe;
+
+    @OneToOne(fetch = FetchType.EAGER)////its always eager though for one to one
+    ///dont want any cascade reference
+    private UnitOfMeasure unitOfMeasure;
 
     public Long getId() {
         return Id;
@@ -44,5 +49,13 @@ public class Ingredients {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public UnitOfMeasure getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
     }
 }
