@@ -19,6 +19,16 @@ public class Ingredients {
     ///dont want any cascade reference
     private UnitOfMeasure unitOfMeasure;
 
+    public Ingredients() {
+    }
+
+    public Ingredients( String desciption, BigDecimal amount,  UnitOfMeasure unitOfMeasure, Recipe recipe) {
+        Desciption = desciption;
+        this.amount = amount;
+        this.recipe = recipe;
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
     public Long getId() {
         return Id;
     }
