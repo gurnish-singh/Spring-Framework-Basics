@@ -1,11 +1,25 @@
 package com.gurnish.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 @Entity
 @Table(name = "owner")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Owner extends Person{
+    @Builder
+    public Owner(Long id, String firstName, String lastName, Set<Pet> pets, String address, String telephone, String city) {
+        super(id, firstName, lastName);
+        this.pets = pets;
+        this.address = address;
+        this.telephone = telephone;
+        this.city = city;
+    }
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
     @Column(name = "address")
@@ -16,35 +30,6 @@ public class Owner extends Person{
     private String city;
 
 
-    public Set<Pet> getPets() {
-        return pets;
-    }
 
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
-    }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 }

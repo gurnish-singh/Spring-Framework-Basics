@@ -65,7 +65,9 @@ public class DataLoader implements CommandLineRunner {
         owner1.setLastName("Weston");
         owner1.setAddress("something");
         owner1.setTelephone("1234567890");
-        ownerServices.save(owner1);
+       // or we can do
+//        owner1.builder().address("jbjb").telephone("mmnnknk").firstName("jnj").lastName("jbjbj").build();
+
         Pet gurnishPet = new Pet();
         gurnishPet.setPetType(savedDogType);
         gurnishPet.setBirthDate(LocalDate.now());
@@ -73,19 +75,23 @@ public class DataLoader implements CommandLineRunner {
         gurnishPet.setOwner(owner1);
         owner1.getPets().add(gurnishPet);
 
+        ownerServices.save(owner1);
+
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenane");
         owner2.setAddress("something");
         owner2.setTelephone("1234567890");
-        ownerServices.save(owner2);
+
         Pet votiPet = new Pet();
         votiPet.setPetType(savedDogType);
         votiPet.setBirthDate(LocalDate.now());
         votiPet.setName("bubu");
         votiPet.setOwner(owner2);
         owner2.getPets().add(votiPet);
+
+        ownerServices.save(owner2);
 
 
         Vet vet1 = new Vet();

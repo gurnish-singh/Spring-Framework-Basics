@@ -1,8 +1,12 @@
 package com.gurnish.recipeapp.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Category {
     @Id
@@ -12,28 +16,4 @@ public class Category {
 
     @ManyToMany(mappedBy = "categories") ////it is specified in Recipe as Set<Category>
     private Set<Recipe> recipeSet;
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        description = description;
-    }
-
-    public Set<Recipe> getRecipeSet() {
-        return recipeSet;
-    }
-
-    public void setRecipeSet(Set<Recipe> recipeSet) {
-        this.recipeSet = recipeSet;
-    }
 }
